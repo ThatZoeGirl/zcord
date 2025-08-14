@@ -1,0 +1,25 @@
+{
+  "name": "@zoe01/zcord",
+  "version": "0.0.1",
+  "description": "A custom made discord.js extention for rapid element creations like embeds and inputs",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThatZoeGirl/zcord.git"
+  },
+  "keywords": [
+    "extention",
+    "discord"
+  ],
+  "author": "Zoë <that.silly.zoe.girl@outlook.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ThatZoeGirl/zcord/issues"
+  },
+  "dependencies": {
+    "discord.js": "^14.21.0"
+  },
+  "homepage": "https://github.com/ThatZoeGirl/zcord#readme"
+}
