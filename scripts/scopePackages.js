@@ -48,10 +48,10 @@ exports.scopePackages = ((scopePath) => {
                 packageObject.commands = {};
 
                 const commandsPath = path.join(packagePath, 'commands');
-                const packageCommands = fs.readdirSync(commandsPath);
+                const packageCommands = fs.readdirSync(commandsPath).filter(p => p.endsWith('.js'));
 
                 const eventsPath = path.join(packagePath, 'events');
-                const packageEvents = fs.readdirSync(eventsPath);
+                const packageEvents = fs.readdirSync(eventsPath).filter(p => p.endsWith('.js'));
 
                 for(const commandFile of packageCommands){
                     try{
