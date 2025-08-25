@@ -47,11 +47,23 @@ exports.scopePackages = ((scopePath) => {
                 packageObject.events = {};
                 packageObject.commands = {};
 
-                const commandsPath = path.join(packagePath, 'commands');
-                const packageCommands = fs.readdirSync(commandsPath).filter(p => p.endsWith('.js'));
-
-                const eventsPath = path.join(packagePath, 'events');
-                const packageEvents = fs.readdirSync(eventsPath).filter(p => p.endsWith('.js'));
+                let commandsPath;
+				let packageCommands;
+				try{
+                	commandsPath = path.join(packagePath, 'commands');
+                	packageCommands = fs.readdirSync(commandsPath).filter(p => p.endsWith('.js'));
+				} catch {
+					packageCommands = [];
+				}
+				
+				let eventsPath;
+				let packageEvents;
+				try{
+                	eventsPath = path.join(packagePath, 'events');
+                	packageEvents = fs.readdirSync(eventsPath).filter(p => p.endsWith('.js'));
+				} catch {
+					packageEvents = [];
+				}
 
                 for(const commandFile of packageCommands){
                     try{
