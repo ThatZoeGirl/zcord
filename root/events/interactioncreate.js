@@ -7,13 +7,11 @@ module.exports = {
      * @param {BaseInteraction} interaction 
      */
     async execute(interaction){
-        console.log(interaction.client.packages);
         if(interaction.isChatInputCommand()){
             const commandName = interaction.commandName;
             const packageArray = [...interaction.client.packages];
 
             try{
-                console.log(packageArray);
                 packageArray.find(p => p[1].commands[commandName] !== undefined)[1].commands[commandName].file.execute(interaction);
             } catch(err) {
                 if(interaction.deferred || interaction.replied){
@@ -28,6 +26,7 @@ module.exports = {
             //let uniqueName = 'hellooo';
             const sourceType = (uniqueName.startsWith('#')) ? 'commands': (uniqueName.startsWith('@')) ? 'events': undefined; if (sourceType === undefined) return;
             uniqueName = uniqueName.substring(1); // removes the special character
+            uniqueName = uniqueName.replaceAll('$', '');
             
             const address = uniqueName.split('/', 2);
 
