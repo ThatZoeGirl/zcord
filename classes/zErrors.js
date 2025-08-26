@@ -24,7 +24,7 @@ class zError {
         const embed = new EmbedBuilder()
             .setTitle(`Error`)
             .setDescription(`## **${this.code}: ${this.title}**\n**${this.message}**`)
-            .setColor(zColor.colors.error)
+            .setColor(colors.error)
             .setTimestamp(Date.now()/10000);
         
         return embed;
