@@ -22,11 +22,10 @@ class zError {
      */
     toEmbed(){
         const embed = new EmbedBuilder()
-            .setAuthor({name:`Error${this.code}`})
-            .setTitle(this.title)
-            .setDescription(this.message)
+            .setTitle(`Error`)
+            .setDescription(`## **${this.code}: ${this.title}**\n**${this.message}**`)
             .setColor(colors.error)
-            .setTimestamp(Date.now()/1000);
+            .setTimestamp(Date.now()/10000);
         
         return embed;
     }
