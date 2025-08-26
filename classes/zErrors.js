@@ -1,5 +1,5 @@
-const {colors} = require('../scripts/colors');
-const {EmbedBuilder} = require('discord.js');
+const { zColor } = require('@zoe01/zcord');
+const { EmbedBuilder } = require('discord.js');
 const util = require('util');
 
 class zError {
@@ -24,7 +24,7 @@ class zError {
         const embed = new EmbedBuilder()
             .setTitle(`Error`)
             .setDescription(`## **${this.code}: ${this.title}**\n**${this.message}**`)
-            .setColor(colors.error)
+            .setColor(zColor.colors.error)
             .setTimestamp(Date.now()/10000);
         
         return embed;
