@@ -1,4 +1,4 @@
-const { zColor } = require('@zoe01/zcord');
+const { colors } = require('../scripts/color.js');
 const { EmbedBuilder } = require('discord.js');
 const util = require('util');
 

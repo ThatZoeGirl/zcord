@@ -1,6 +1,6 @@
 {
   "name": "@zoe01/zcord",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A custom made discord.js extention for rapid element creations like embeds and inputs",
   "main": "index.js",
   "scripts": {
