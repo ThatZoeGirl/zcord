@@ -53,7 +53,6 @@ class zClient extends Client {
      * initiate all events
      */
     initEvents() {
-        console.log(this.packages);
         if(!this.packages){throw new Error('No packages in client')};
         this.packages.forEach((pack, key) => {
             if(Object.keys(pack.events).length > 0){
