@@ -11,8 +11,13 @@ class zClient extends Client {
         const partials = [];
 
         packages.forEach((pack, key) => {
-            intents.concat(pack.intents);
-            partials.concat(pack.partials);
+            try {
+                pack.index.init();
+                intents.concat(pack.intents);
+                partials.concat(pack.partials);
+            } catch(err) {
+                throw err;
+            }
         })
 
         super({intents:intents, partials:partials});

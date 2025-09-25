@@ -23,7 +23,6 @@ module.exports = {
             
         } else if(interaction.isMessageComponent() || interaction.isModalSubmit() || interaction.isButton()){
             let uniqueName = interaction.component.customId;
-            //let uniqueName = 'hellooo';
             const sourceType = (uniqueName.startsWith('#')) ? 'commands': (uniqueName.startsWith('@')) ? 'events': undefined; if (sourceType === undefined) return;
             uniqueName = uniqueName.substring(1); // removes the special character
             uniqueName = uniqueName.replaceAll('$', '');

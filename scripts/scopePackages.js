@@ -42,6 +42,9 @@ exports.scopePackages = ((scopePath) => {
                 if(!('partials' in packageIndex)){
                     packageIndex.partials = [];
                 }
+                if(!('init' in packageIndex)){
+                    packageIndex.init = (() => {return;});
+                }
 
                 packageObject.index = packageIndex;
                 packageObject.events = {};
